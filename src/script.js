@@ -3,6 +3,7 @@ const $score = document.querySelector('#score')
 
 function start() {
   setScore(getScore())
+  setImage()
 }
 
 function setScore(score) {
@@ -17,6 +18,12 @@ function getScore() {
 function addOne() {
   setScore(getScore() + 1)
 }
+
+function setImage() {
+    if (getScore() >= 50) {
+      $circle.setAttribute('src', './assets/2.jpg')
+    }
+  }
 
 $circle.addEventListener('click', (event) => {
   const rect = $circle.getBoundingClientRect()
